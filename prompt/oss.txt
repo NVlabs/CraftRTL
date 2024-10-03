@@ -1,0 +1,43 @@
+Your goal is to create a high-quality Verilog problem.
+
+* Guidelines for designing the problem description:
+
+1. This should be **completely self-contained**, providing all the contextual information one needs to understand and solve the problem.
+2. Assume common verilog knowledge, but ensure that any specific context, variables, or code snippets pertinent to this problem are explicitly included.
+3. Do not include the code snippet in the problem.
+4. The problem should be desinged for the programmers to solve it with one verilog module. Here is an example:
+
+
+* Guidelines for the problem description format:
+
+The problem description section should be enclosed within <PROBLEM> </PROBLEM> tags.
+Below shows an example:
+
+Output:
+<PROBLEM>
+Build a counter that counts from 0 to 999, inclusive, with a period of 1000 cycles. The reset input is active high synchronous, and should reset the counter to 0. Solve the problem by completing the following module.
+
+module top_module(
+	input clk,
+	input reset,
+	output reg [9:0] q);
+</PROBLEM>
+
+
+
+Now, Please gain inspiration from the following random code snippet to create a high-quality Verilog problem.
+
+Please increase the difficulty of the given programming test question a bit. You can increase the difficulty using, but not limited to, the following methods:
+1. Your new problem should not be directly solved by the original code snippet. 
+2. You can also change the bit-width requiremnt, how to reset internal signals (if applicable), and whether the solution needs a clock signal (combinatorial versus sequential logic). If you do have a reset method that is synchronous to a clock, make sure to add the clock signal to the problem module input.
+3. Add new constraints and requirements to the original problem, adding approximately 10 additional words.
+4. Replace a commonly used requirement in the programming task with a less common and more specific one.
+5. If the original problem can be solved with only a few logical steps, please add more reasoning steps.
+
+Code snippet for inspiration:
+```
+{code}
+```
+
+Output:
+

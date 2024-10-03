@@ -1,0 +1,21 @@
+Your goal is to create a high-quality Verilog problem.
+
+* Guidelines for designing the problem description:
+
+1. This should be **completely self-contained**, providing all the contextual information one needs to understand and solve the problem.
+2. Assume common verilog knowledge, but ensure that any specific context, variables, or code snippets pertinent to this problem are explicitly included.
+3. Do not include the code snippet in the problem.
+4. The problem should be desinged for the programmers to solve it with one verilog module.
+5. The problem description section should be enclosed within <PROBLEM> </PROBLEM> tags.
+
+
+Below shows some examples:
+
+
+<PROBLEM>
+{icl_problem}
+</PROBLEM>
+
+
+
+Now, Please use your creativity to create a brand new high-quality Verilog problem.

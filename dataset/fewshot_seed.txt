@@ -1,0 +1,2 @@
+"Create a 2-1 multiplexer. When sel=0, choose a. When sel=1, choose b."
+"Consider the state machine shown below:\n\n// A (0) --0--> B\n// A (0) --1--> A\n// B (0) --0--> C\n// B (0) --1--> D\n// C (0) --0--> E\n// C (0) --1--> D\n// D (0) --0--> F\n// D (0) --1--> A\n// E (1) --0--> E\n// E (1) --1--> D\n// F (1) --0--> C\n// F (1) --1--> D\n\n// Assume that you want to Implement the FSM using three flip-flops and state codes y[3:1] = 000, 001, ..., 101 for states A, B, ..., F, respectively. Implement just the next-state logic for y[2] in Verilog. The output Y2 is y[2]."

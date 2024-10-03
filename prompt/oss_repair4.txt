@@ -1,0 +1,67 @@
+Your goal is to create an error-fixing Verilog practice problem for programmers. You will demonstrate a type of error that is commonly made by programmers.
+Create an error repair practice problem with three components:
+1. Problem description
+2. Erroneous implementation
+3. Hints for fixing
+
+
+Here is an example:
+<PROBLEM>
+The following Verilog module is intended to implement the specification below. However, there is a bug in the code which causes incorrect results. Please fix the bug to make the module work as intended.
+
+Erroneous Implementation:
+```verilog
+// Verilog code with the injected error
+module example_module (
+    input wire clk,
+    input wire reset,
+    output reg [3:0] counter
+);
+
+// Intended functionality:
+// This module should count from 0 to 15 and then wrap around.
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        counter <= 4'b0000;
+    end else begin
+        counter <= counter + 1'b1; // Error injected: Should be 4'b1
+    end
+end
+
+endmodule
+```
+
+Hints for Fixing:
+1. Verify the bit-width of the counter and the increment operation.
+2. Check the initialization and wrapping condition of the counter.
+3. Ensure that the addition operation correctly handles the 4-bit counter.
+</PROBLEM>
+
+
+
+Now, here is the commonly made error:
+
+<ERROR>
+{icl_error}
+
+{icl_reason}
+
+The corrected code:
+{icl_correct}
+</ERROR>
+
+
+Now, here is a code snippet with a Verilog module:
+<CODE>
+{code}
+</CODE>
+
+
+Inject the commonly made error into the above module and create an error repair practice problem.
+First tell me if it is possible to inject the error.
+If yes, create the problem with commonly made error alone and ignore the module in the code snippet. 
+Do not include the corrected code in the response.
+
+Output your created problem and place it inside <PROBLEM> </PROBLEM> tags.
+

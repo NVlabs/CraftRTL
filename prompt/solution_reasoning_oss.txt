@@ -1,0 +1,90 @@
+Your goal is to solve a Verilog problem by completing one verilog module.
+
+* Guidelines for writing the solution (verilog module) and formatting:
+
+1. The module should be **completely self-contained**, fulfilling all the requirements needed to solve the problem.
+2. Ensure the correctness of the syntax and functionality.
+3. The module name must be "top_module".
+4. Do not add blackslash in front of underscore symbol.
+5. The solution must be valid Verilog code.
+6. The solution section should be enclosed within <SOLUTION> </SOLUTION> tags.
+7. The reasoning section should be enclosed within <REASON> </REASON> tags.
+8. Write comments in the solution section, such that the reasoning provided in the reasoning sections are also embedded in the comments. Always try to write the corresponding comments before the code.
+9. The module should be **completely self-contained**, do not include or import outside the module and define everything inside the module.
+
+
+Below shows an example:
+
+Problem description:
+```
+Build a counter that counts from 0 to 999, inclusive, with a period of 1000 cycles. The reset input is active high synchronous, and should reset the counter to 0. Solve the problem by completing the following module.
+
+module top_module(
+	input clk,
+	input reset,
+	output reg [9:0] q);
+```
+
+Output:
+I will first reason about the problem and then provide my solution code with adequate comments.
+
+<REASON>
+To solve the problem of building a counter that counts from 0 to 999 with a reset input that is active high synchronous, you will need a 10-bit register (since 
+2^10=1024 and 999 < 1024). The counter should increment on each clock cycle and wrap around back to 0 when it reaches 1000. The reset input, when active, should reset the counter to 0 on the next clock edge.
+
+Here’s a detailed explanation and complete implementation in Verilog:
+
+Clock and Reset: The counter should increment each clock cycle. When reset is high, the counter should reset to 0 synchronously with the clock.
+
+Counter Size: We need a counter wide enough to hold values up to 999, which is achievable with a 10-bit register.
+
+Handling the Maximum Count: Since the requirement is to count up to 999 and then reset to 0, implement logic to handle this transition.
+
+Reset Logic: The reset must be synchronous, meaning the reset operation only happens in conjunction with the clock signal. Thus, even if the reset signal becomes active, the counter will only reset to 0 at the next clock edge.
+
+In order to complete the above module I need the following breakdown:
+always @(posedge clk): This block executes on the positive edge of the clock signal.
+if (reset): Checks if the reset is active. If it is, the counter is set to 0. This is synchronous with the clock.
+else if (q == 999): If the counter has reached 999, it needs to wrap around to 0 on the next cycle.
+else: In all other cases, just increment the counter.
+This module meets the requirements specified: a 10-bit counter that counts from 0 to 999, resets to 0 on reaching 1000, and has an active high synchronous reset.
+</REASON>
+
+Here is the Verilog code for the module:
+
+<SOLUTION>
+module top_module(
+    input clk,
+    input reset,
+    output reg [9:0] q);
+    
+    // This block executes on the positive edge of the clock signal.
+    always @(posedge clk) begin
+        // Checks if the reset is active. This is synchronous with the clock.
+        if (reset) begin
+            // Reset the counter to 0 when reset is active
+            q <= 0;
+        // If the counter has reached 999, it needs to wrap around to 0 on the next cycle.
+        end else if (q == 999) begin
+            // Reset to 0 after reaching 999
+            q <= 0;
+        // In all other cases, just increment the counter.
+        end else begin
+            // Increment the counter
+            q <= q + 1;
+        end
+    end
+endmodule
+</SOLUTION>
+
+Now, Please solve the following Verilog problem. I will also attach a reference code snippet which was used as an inspiration to generate the problem. The provided code may not directly solve the problem so you should use it only as a reference.
+
+Reference code:
+{reference_code}
+
+Problem description:
+```
+{problem}
+```
+
+Output:

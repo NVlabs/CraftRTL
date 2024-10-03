@@ -1,0 +1,1 @@
+{"task_id": "vector3", "completion": " module top_module (\ninput [4:0] a,\ninput [4:0] b,\ninput [4:0] c,\ninput [4:0] d,\ninput [4:0] e,\ninput [4:0] f,\noutput [7:0] w,\noutput [7:0] x,\noutput [7:0] y,\noutput [7:0] z\n);\n\n// Concatenate the inputs with the last bit as 2’b11\nassign {w, x, y, z} = {2’b11, a, b, c, d, e, f};\nendmodule\n", "passed": false}
